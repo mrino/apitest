@@ -1,0 +1,14 @@
+type Test {
+    id: ID!
+    email: String!
+    password: String!
+}
+
+type Query {
+    findAllTests: [Test],
+    findTestById(id: ID!): Test
+}
+
+type Mutation {
+    createTest(userId: String): Test
+}
