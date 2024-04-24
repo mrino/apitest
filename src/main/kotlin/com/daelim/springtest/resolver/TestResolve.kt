@@ -30,8 +30,7 @@ class PostResolver : GraphQLQueryResolver, GraphQLMutationResolver {
             email = userEamil,
             password = userPw,
         )
-        if (test.email == userEamil) {
-            //findbtEmail만들어는데 안먹음
+        if (!tests.contains(test)) {
             tests.add(test)
         }
         return test
