@@ -57,10 +57,11 @@ class Controller {
             //랜덤한 6숫자
             //TestDto에서 만든 lotto에 값넣고 체크하기
             if (a == a){
-               //체크했으면 랜덤한 숫자 부여
-                //회차별로 count증가
+                //체크했으면 랜덤한 숫자 부여
             }
         }
+        //회차별로 count증가
+        //lotto를 이용하여 추가
         return ResponseEntity.ok().body(tests)
     }
     @PostMapping("/lotto")
@@ -87,6 +88,8 @@ class Controller {
     ): ResponseEntity<MutableList<Int>> {
         //가지고 온 숫자 비교해서 체크하기
         //회차별로 체크하기
+        //카운트로 회차 체크
+
         return ResponseEntity.ok().body(null)
     }
 }
