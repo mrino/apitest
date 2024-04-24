@@ -6,6 +6,10 @@ data class TestDto(
     val password : String
 )
 
+data class Lotto(
+    val list: MutableList<Int>
+)
+
 data class TestDtoRequest(
     val id: String,
     val eamil: String,
