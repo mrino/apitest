@@ -20,6 +20,9 @@ class PostResolver : GraphQLQueryResolver, GraphQLMutationResolver {
     fun findTestById(id: String): TestDto? {
         return tests.find { it.id == id }
     }
+    fun findTestByEmail(email: String): TestDto? {
+        return tests.find { it.email == email }
+    }
 
     fun createTest(userId: String, userEamil : String, userPw : String): TestDto {
         val test = TestDto(
@@ -27,7 +30,10 @@ class PostResolver : GraphQLQueryResolver, GraphQLMutationResolver {
             email = userEamil,
             password = userPw,
         )
-        tests.add(test)
+        if (test.email == userEamil) {
+            //findbtEmail만들어는데 안먹음
+            tests.add(test)
+        }
         return test
     }
 }

@@ -13,7 +13,10 @@ import java.util.*
 @RestController
 class Controller {
     private val tests = mutableListOf<TestDto>()
-    private val lotto = mutableListOf<Lotto>()
+    val lotto = mutableListOf<Lotto>()
+    val Num = mutableListOf<Int>()
+    private var count = 0;
+
     @PostMapping("/user/create")
     fun postCreateDto(
         @RequestBody testDtoRequest: TestDtoRequest
@@ -46,16 +49,46 @@ class Controller {
     @GetMapping("/lotto")
     fun getLottoTestDto(
     ): ResponseEntity<List<TestDto>> {
-
-        //ㅑ
+        var rd = Random();
+        var b = 1;
+        //lotto 6자리 추가
+        while (b == 7){
+            var a =rd.nextInt(45)
+            //랜덤한 6숫자
+            //TestDto에서 만든 lotto에 값넣고 체크하기
+            if (a == a){
+               //체크했으면 랜덤한 숫자 부여
+                //회차별로 count증가
+            }
+        }
         return ResponseEntity.ok().body(tests)
     }
+    @PostMapping("/lotto")
+    fun postlottoDto(
+        @RequestBody testDtoRequest: TestDtoRequest
+    ): ResponseEntity<MutableList<Int>> {
+        var rd = Random();
+        var b = 1;
+        //lotto 6자리 추가
+        while (b == 7){
+            var a =rd.nextInt(45)
+            //랜덤한 6숫자
+            //TestDto에서 만든 lotto에 값넣고 체크하기
+            if (a == a){
+                //체크했으면 랜덤한 숫자 부여
+            }
+        }
+        return ResponseEntity.ok().body(null)
+    }
 
-    @GetMapping("/test/{id}")
-    fun getTestDto(
-        @PathVariable("id") userId: String
-    ): ResponseEntity<TestDto> {
-        val response = tests.firstOrNull{it.id == userId}
-        return ResponseEntity.ok().body(response)
+    @PostMapping("/lotto/check")
+    fun postlottcheckoDto(
+        @RequestBody testDtoRequest: TestDtoRequest
+    ): ResponseEntity<MutableList<Int>> {
+        //가지고 온 숫자 비교해서 체크하기
+        //회차별로 체크하기
+        return ResponseEntity.ok().body(null)
     }
 }
+
+

@@ -7,7 +7,8 @@ data class TestDto(
 )
 
 data class Lotto(
-    val list: MutableList<Int>
+    val count: Int,
+    val Lotto: MutableList<Int>
 )
 
 data class TestDtoRequest(
